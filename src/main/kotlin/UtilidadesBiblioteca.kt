@@ -21,13 +21,19 @@ class UtilidadesBiblioteca {
     // forma Ezzzzzz
     companion object{
 
-        var id = 0
-
-        fun generarIdentificadorUnico():String{
-            id++
-            return id.toString()
+        private var idLibro = 0
+        fun generarIdentificadorUnicoLibro():String{
+            idLibro++
+            return idLibro.toString()
         }
 
+
+
+        private var idUsuario = 0
+        fun generarIdentificadorUnicoUsuario():String{
+            idUsuario++
+            return idUsuario.toString()
+        }
 
     }
 

@@ -1,13 +1,13 @@
 /**
  *  solo contendrá datos, sin ninguna lógica asociada.
  */
-data class Libro(
-    val id:String,
-    val titulo:String,
-    val autor:String,
-    val anioPublicacion:String,
-    val tematica:String,
-    var estado:Estado = Estado.DISPONIBLE
+class Libro(
+    private val id:String,
+    private val titulo:String,
+    private val autor:String,
+    private val anioPublicacion:String,
+    private val tematica:String,
+    private var estado:Estado = Estado.DISPONIBLE
 ) {
     init {
         require(id.isNotEmpty()) {"La id no puede estar vacia"}
@@ -17,6 +17,15 @@ data class Libro(
         require(tematica.isNotEmpty()) {"La tematica no puede estar vacia"}
     }
 
+    fun getId() = id
+    fun getTitulo() = titulo
+    fun getAutor() = autor
+    fun getAnioPublicacion() = anioPublicacion
+    fun getTematica() = tematica
+    fun getEstado() = estado
+    fun setEstado(estado: Estado){
+        this.estado = estado
+    }
 
 }
 

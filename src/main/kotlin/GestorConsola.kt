@@ -10,8 +10,12 @@ class GestorConsola {
 
     fun libroNoEncontrado() = mostrarMensaje("Este libro no se ha encontrado en el catalogo")
 
+    fun usuarioNoEncontrado() = mostrarMensaje("No se ha encontrado este usuario")
+
     fun libroEstabaEstado(estado: Estado) = mostrarMensaje("Este libro ya estaba ${estado.toString().lowercase()}")
 
     fun libroEstaEstado(estado: Estado) = mostrarMensaje("Este libro esta ${estado.toString().lowercase()}")
+
+    fun libroNoPrestadoUsuario() = mostrarMensaje("Este libro no se encuentra en los prestamos del usuario")
 
 }
