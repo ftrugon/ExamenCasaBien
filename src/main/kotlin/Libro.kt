@@ -1,5 +1,12 @@
 /**
- *  solo contendrá datos, sin ninguna lógica asociada.
+ * Representa un libro en la biblioteca.
+ *
+ * @property id El identificador único del libro.
+ * @property titulo El título del libro.
+ * @property autor El autor del libro.
+ * @property anioPublicacion El año de publicación del libro.
+ * @property tematica La temática del libro.
+ * @property estado El estado actual del libro (disponible, prestado, etc.).
  */
 class Libro(
     private val id:String,
@@ -27,10 +34,10 @@ class Libro(
         this.estado = estado
     }
 
+    override fun toString(): String {
+        return "id=$id, titulo=$titulo, estado=$estado"
+    }
+
 }
 
 
-enum class Estado {
-    DISPONIBLE,
-    PRESTADO
-}

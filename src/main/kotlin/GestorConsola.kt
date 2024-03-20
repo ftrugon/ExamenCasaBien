@@ -1,13 +1,22 @@
 class GestorConsola {
 
+    /**
+     * Muestra un mensaje que le indiquiemos
+     * @param mensaje el mensaje
+     */
     fun mostrarMensaje(mensaje:String){
         println(mensaje)
     }
 
-    fun mostrarLista(list: List<Libro>){
+    /**
+     * Muestra una lista de cualquier cosa que le pasemos
+     */
+    fun <T>mostrarLista(list: List<T>){
         list.forEach { println(it) }
     }
 
+
+    // Mensajes del gestor de biblioteca
     fun libroNoEncontrado() = mostrarMensaje("Este libro no se ha encontrado en el catalogo")
 
     fun usuarioNoEncontrado() = mostrarMensaje("No se ha encontrado este usuario")

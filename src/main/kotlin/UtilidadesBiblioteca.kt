@@ -1,27 +1,15 @@
-import java.util.UUID
-
+/**
+ * Clase de utilidades para la biblioteca que proporciona métodos estáticos para generar identificadores únicos.
+ */
 class UtilidadesBiblioteca {
 
-    // Forma hardcore shit
-    //companion object{
-    //    var listaUUIDS = mutableListOf<String>()
-
-    //    fun generarIdentificadorUnico():String{
-    //        var uuidAsignar = UUID.randomUUID().toString()
-
-    //        while (uuidAsignar in listaUUIDS){
-    //            uuidAsignar = UUID.randomUUID().toString()
-    //        }
-
-    //        return uuidAsignar
-    //    }
-    //}
-
-
-    // forma Ezzzzzz
     companion object{
 
         private var idLibro = 0
+        /**
+         * Genera un identificador único para un libro.
+         * @return El identificador único generado para el libro.
+         */
         fun generarIdentificadorUnicoLibro():String{
             idLibro++
             return idLibro.toString()
@@ -30,6 +18,10 @@ class UtilidadesBiblioteca {
 
 
         private var idUsuario = 0
+        /**
+         * Genera un identificador único para un usuario.
+         * @return El identificador único generado para el usuario.
+         */
         fun generarIdentificadorUnicoUsuario():String{
             idUsuario++
             return idUsuario.toString()
