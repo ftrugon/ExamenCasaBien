@@ -5,15 +5,19 @@ import GestorCatalogo
 import GestorRegistros
 import GestorConsola
 import Libro
+import UtilidadesBiblioteca
 
 fun main() {
 
     val consola = GestorConsola()
 
+
     val biblioteca = GestorBiblioteca(GestorCatalogo(),GestorRegistros(),consola)
-    biblioteca.agregarLibroCatalogo(Libro("1","El silbon de torres","migue","17/03/2020","Terror"))
-    biblioteca.agregarLibroCatalogo(Libro("2","Achili Pum","migue","17/03/2020","Terror"))
-    biblioteca.agregarLibroCatalogo(Libro("3","lA bYda es un toMVola","migue","17/03/2020","Terror"))
+    biblioteca.agregarLibroCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnico(),"El silbon de torres","migue","17/03/2020","Terror"))
+    biblioteca.agregarLibroCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnico(),"Achili Pum","migue","17/03/2020","Terror"))
+    biblioteca.agregarLibroCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnico(),"lA bYda es un toMVola","migue","17/03/2020","Terror"))
+
+
 
     biblioteca.registrarPrestamo("1")
     biblioteca.registrarPrestamo("2")
