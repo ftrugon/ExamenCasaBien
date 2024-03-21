@@ -1,15 +1,3 @@
-package org.example
-
-import GestorBiblioteca
-import GestorCatalogo
-import GestorRegistros
-import GestorConsola
-import GestorUsuarios
-import Libro
-import Usuario
-import UtilidadesBiblioteca
-
-
 /**
  * la funcion principal del programa
  */
@@ -20,9 +8,9 @@ fun main() {
 
     //Creando la biblioteca y agregandole libros y usuarios
     val biblioteca = GestorBiblioteca(GestorCatalogo(),GestorRegistros(),consola,GestorUsuarios())
-    biblioteca.agregarLibroCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnicoLibro(),"El silbon de torres","migue","17/03/2020","Terror"))
-    biblioteca.agregarLibroCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnicoLibro(),"Achili Pum","migue","17/03/2020","Terror"))
-    biblioteca.agregarLibroCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnicoLibro(),"lA bYda es un toMVola","migue","17/03/2020","Terror"))
+    biblioteca.agregarElementoCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnicoElemento(),"El silbon de torres","migue","17/03/2020","Terror"))
+    biblioteca.agregarElementoCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnicoElemento(),"Achili Pum","migue","17/03/2020","Terror"))
+    biblioteca.agregarElementoCatalogo(Libro(UtilidadesBiblioteca.generarIdentificadorUnicoElemento(),"lA bYda es un toMVola","migue","17/03/2020","Terror"))
 
     biblioteca.agregarUsuario(Usuario(UtilidadesBiblioteca.generarIdentificadorUnicoUsuario(),"fran"))
     biblioteca.agregarUsuario(Usuario(UtilidadesBiblioteca.generarIdentificadorUnicoUsuario(),"andres"))
@@ -32,8 +20,8 @@ fun main() {
     biblioteca.registrarPrestamo("1","1")
     biblioteca.registrarPrestamo("2","1")
 
-    biblioteca.devolverLibro("2","1")
-    biblioteca.devolverLibro("3","1")
+    biblioteca.devolverElemento("2","1")
+    biblioteca.devolverElemento("3","1")
 
     //los libros prestados y disponibles
     val listaDisponibles = biblioteca.retornarPorEstado(Estado.DISPONIBLE)
@@ -47,9 +35,9 @@ fun main() {
     consola.mostrarLista(listaPrestados)
 
     // Los historiales de libros y usuarios
-    val historialPrestamosLibro1 = biblioteca.historialDeUnLibro("1")
-    val historialPrestamosLibro2 = biblioteca.historialDeUnLibro("2")
-    val historialPrestamosLibro3 = biblioteca.historialDeUnLibro("3")
+    val historialPrestamosLibro1 = biblioteca.historialDeUnElemento("1")
+    val historialPrestamosLibro2 = biblioteca.historialDeUnElemento("2")
+    val historialPrestamosLibro3 = biblioteca.historialDeUnElemento("3")
 
     val historialUsuario1 = biblioteca.historialDeUnUsuario("1")
     val historialUsuario2 = biblioteca.historialDeUnUsuario("2")

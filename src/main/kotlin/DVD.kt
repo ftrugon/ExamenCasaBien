@@ -1,14 +1,7 @@
-class Libro(
+class DVD(
     id: String,
     titulo: String,
-    private val autor:String,
-    private val anioPublicacion:String,
-    private val tematica:String
 ) :ElementoBiblioteca(id, titulo),Prestable{
-
-    fun getAutor() = autor
-    fun getAnioPublicacion() = anioPublicacion
-    fun getTematica() = tematica
 
     override fun prestar() {
         setEstado(Estado.PRESTADO)
@@ -19,6 +12,6 @@ class Libro(
     }
 
     override fun toString(): String {
-        return "Libro "+super.toString()
+        return "DVD "+super.toString()
     }
 }
