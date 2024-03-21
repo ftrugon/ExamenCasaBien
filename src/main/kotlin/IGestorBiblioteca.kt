@@ -1,5 +1,5 @@
 interface IGestorBiblioteca {
-    val catalogo: IGestorCatalogo
+    val catalogo: GestorCatalogo
     val registros: IGestorPrestamos
     val consola: IGestorConsola
     val usuarios: IGestorUsuarios

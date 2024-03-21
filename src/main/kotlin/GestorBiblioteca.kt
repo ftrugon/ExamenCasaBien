@@ -1,5 +1,5 @@
 class GestorBiblioteca(
-    override val catalogo: IGestorCatalogo,
+    override val catalogo: GestorCatalogo,
     override val registros: IGestorPrestamos,
     override val consola: IGestorConsola,
     override val usuarios: IGestorUsuarios

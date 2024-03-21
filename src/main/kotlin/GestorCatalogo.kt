@@ -1,25 +1,24 @@
-class GestorCatalogo:IGestorCatalogo {
-    override val catalogo = mutableListOf<ElementoBiblioteca>()
+class GestorCatalogo: GestorElementos<ElementoBiblioteca>() {
 
     override fun agregar(elemento: ElementoBiblioteca){
-        catalogo.add(elemento)
+        super.agregar(elemento)
     }
 
-
-    override fun eliminar(elemento: ElementoBiblioteca){
-        catalogo.remove(elemento)
+    override fun eliminar(idElemeto: String) {
+        super.eliminar(idElemeto)
     }
 
-
-
-    override fun buscar(id:String):ElementoBiblioteca?{
-        return catalogo.find { it.getId() == id }
+    override fun elementosGestionados(): MutableList<ElementoBiblioteca> {
+        return super.elementosGestionados()
     }
 
-
-    override fun buscarPorEstado(estado: Estado): List<ElementoBiblioteca> {
-        return catalogo.filter { it.getEstado() == estado }
+    override fun filtrarPorCriterio(
+        elementos: List<ElementoBiblioteca>,
+        criterio: (elemento: ElementoBiblioteca) -> Boolean
+    ): List<ElementoBiblioteca> {
+        return super.filtrarPorCriterio(elementos, criterio)
     }
+
 
 
 }
