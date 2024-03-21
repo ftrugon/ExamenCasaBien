@@ -1,13 +1,25 @@
-class GestorConsola:IGestorConsola {
+/**
+ * Clase que implementa la interfaz IGestorConsola para gestionar mensajes de consola.
+ */
+class GestorConsola : IGestorConsola {
 
-    override fun mostrarMensaje(mensaje:String){
+    /**
+     * Muestra un mensaje en la consola.
+     *
+     * @param mensaje El mensaje a mostrar.
+     */
+    override fun mostrarMensaje(mensaje: String) {
         println(mensaje)
     }
 
-    override fun <T>mostrarLista(list: List<T>){
+    /**
+     * Muestra una lista de elementos en la consola.
+     *
+     * @param list La lista de elementos a mostrar.
+     */
+    override fun <T> mostrarLista(list: List<T>) {
         list.forEach { println(it) }
     }
-
 
     // Mensajes del gestor de biblioteca
     override fun elementoNoEncontrado() = mostrarMensaje("Este elemento no se ha encontrado en el catalogo")
